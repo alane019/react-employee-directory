@@ -3,10 +3,10 @@ import React from "react";
 
 function PageHeading() {
   return (
-    <div className="center jumbotron">
-      <h1 className="display-2">Your Organization's Directory</h1>
-      <p className="lead">Hello, today is {
-      (new Intl.DateTimeFormat('en-US', { dateStyle: 'full', HourCycle: 'H12', timeStyle: 'short' }).format())
+    <div style={{padding: 15}}className="jumbotron">
+      <p style={{fontSize: 25, marginBottom: 0}} className="display-4">Your Organization's Directory</p>
+      <p style={{color:"gray", paddingLeft: 12, marginTop: 0}} className="lead">{
+      (new Intl.DateTimeFormat('en-US', { dateStyle: 'full', timeStyle: 'short' }).format())
       }</p>
     </div>
   );

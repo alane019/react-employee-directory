@@ -1,8 +1,14 @@
 import React from "react";
 import DirectoryContainer from "./components/DirectoryContainer";
+import PageHeading from "./components/PageHeading";
 
 function App() {
-	return <DirectoryContainer />;
+	return(
+	<div>
+	 <PageHeading />
+	 <DirectoryContainer />
+	 </div>
+	);
 }
 
 export default App;
