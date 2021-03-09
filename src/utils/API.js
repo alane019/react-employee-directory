@@ -1,9 +1,12 @@
-import axios from "axios"; 
-const url = "https://randomuser.me/api/?format&results=3";
+import axios from "axios";
+let resultLimit = 5;
+const url = `https://randomuser.me/api/?results=${resultLimit}`;
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   search: function() {
-    return axios.get(url);
+    let employees = axios.get(url);
+    console.log(employees);
+    return employees;
   }
 };
