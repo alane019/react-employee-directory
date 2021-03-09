@@ -21,7 +21,7 @@
 - [Installation](#installation)
 - [Deployment](#deployment)
 - [Built Using](#tech_stack)
-- [Contributing](../CONTRIBUTING.md)
+- [Contributing](#contributing)
 
 ---
 ##  Overview <a name = "overview"></a>
@@ -74,29 +74,15 @@ When using React Employee Directory, random user data is pulled using a random u
 ----
 
 ##  Technologies Used  <a name = "tech_stack"></a>
-- [NodeJs](https://nodejs.org/) -  JavaScript runtime
-- [React](https://nodejs.org/) - Javascript UI library.
-- [Axios](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) - Promise based HTTP client optimized for effificent development of secure and performant NodeJS web applications. 
+- [NodeJs](https://nodejs.org/) -  JavaScript front-end lib
+- [React](https://reactjs.org/) - Javascript user interface library.
+- [Axios](https://github.com/axios/axios) - Promise based HTTP client optimized for effificent development of secure and performant NodeJS web applications. 
 - [Create React App](https://create-react-app.dev/docs/getting-started) is used to bootstrap the setup and configuration of build tools like [Babel](https://babeljs.io/) and [Webpack](https://webpack.js.org/), which are used for JavaScript module bundling and dynamic transpiling of project resources.
 
 
 ----
-##  Contributing <a name = "deployment"></a>
+##  Contributing <a name = "contributing"></a>
 
 Any and all contributions are welcome. Submit a pull request or an issue if you would like to contribute code changes, or request improvements. This project should be a great resource for anyone looking for a working introduction to NodeJs React development with REST APIs. 
 
-<script>
-(function() {
-  var links = document.links;
-  for (var i = 0, linksLength = links.length; i < linksLength; i++) {
-    if (links[i].hostname != window.location.hostname) {
-      links[i].target = "_blank";
-      links[i].setAttribute("rel", "noopener noreferrer");
-      links[i].className += " externalLink";
-    } else {
-      links[i].className += " localLink";
-    }
-  }
-})();
-</script>
 
