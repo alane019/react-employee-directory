@@ -33,6 +33,7 @@ class DirectoryContainer extends React.Component {
         <div className="container">
           <Row>
             <div className="col md-8">
+              <img alt="place holder" src=".\screen-main.JPG"></img>
             </div>
             </Row>
         </div>
