@@ -74,8 +74,8 @@ When using React Employee Directory, random user data is pulled using a random u
 ----
 
 ##  Technologies Used  <a name = "tech_stack"></a>
-- [NodeJs](https://nodejs.org/) -  JavaScript front-end lib
-- [React](https://reactjs.org/) - Javascript user interface library.
+- [NodeJs](https://nodejs.org/) -  JavaScript runtime. 
+- [React](https://reactjs.org/) - JavaScript front-end library.
 - [Axios](https://github.com/axios/axios) - Promise based HTTP client optimized for effificent development of secure and performant NodeJS web applications. 
 - [Create React App](https://create-react-app.dev/docs/getting-started) is used to bootstrap the setup and configuration of build tools like [Babel](https://babeljs.io/) and [Webpack](https://webpack.js.org/), which are used for JavaScript module bundling and dynamic transpiling of project resources.
 
