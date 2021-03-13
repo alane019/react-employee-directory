@@ -4,11 +4,13 @@ function EmployeeDetail(props) {
 
   return (
     <div className="text-center">
-      <h3>State: {props.location.city}   </h3>
-
+      <h3>City: {/* props.location.city */}   </h3>
+      {/* logs [object, object] */}
+      { console.log("props: " + props)}
+        {/* logs [undefined] */}
+      { console.log("props.location:  " + props.location)}
       { /*
        <ul>   {props.map((itm, idx) => (<li key={idx}> {itm}  </li>))}</ul>
-    
       { response.map((item, index) => (<li key={index}>{item}</li>)) }
        */ }
     </div>
@@ -17,8 +19,6 @@ function EmployeeDetail(props) {
 export default EmployeeDetail;
 
 /*
-    
-
       <h3>Country: {props.location.country}</h3>
       <img
         alt="employee"

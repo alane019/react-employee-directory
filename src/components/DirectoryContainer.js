@@ -53,7 +53,7 @@ class DirectoryContainer extends Component {
               {console.log("THIS is >>> "  + this )}
              <EmployeeDetail
                 key={this.email}
-                city={this.location.city.value}  
+                city={this.state.result.city}  
               />
             </div>
           </Row>
@@ -61,6 +61,7 @@ class DirectoryContainer extends Component {
     );
   }
 }
+
 export default DirectoryContainer;
 
 /*
