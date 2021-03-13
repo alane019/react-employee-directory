@@ -4,8 +4,21 @@ import React from "react";
 import API from "../utils/API";
 import Row from "./Row";
 import Container from "./Container";
+import axios from "axios";
+let resultLimit = 5;
+// expected example: https://randomuser.me/api/?results=5
+const url = `https://randomuser.me/api/?results=${resultLimit}`;
+console.log("url after template literal" + url);
 
-//import EmployeeDetail from "./EmployeeDetail";
+// eslint-disable-next-line import/no-anonymous-default-export
+
+  let axiosSearch = () => {
+    //let employees = axios.get(url);
+   // console.log(employees);
+    return  axios.get(url);
+  };
+
+
 
 class DirectoryContainer extends React.Component {
   state = {
@@ -22,7 +35,8 @@ class DirectoryContainer extends React.Component {
 
   // return randomized list of employees
   getEmployees = () => {
-    API.search()
+    axiosSearch.search()
+      .then(console.log(" Axios API Result: \n "))
       .then((res) => this.setState({ result: res.data }))
       .catch((err) => console.log(err));
   };
