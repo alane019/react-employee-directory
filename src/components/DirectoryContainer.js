@@ -1,72 +1,77 @@
 //DirectoryContainer is the main container for page content. Includes all excecpt heading.
 // export to app.js to display below the PageHeading component on the index page
 import React, { Component } from "react";
-import Row from "./Row";
-import Container from "./Container";
 import axios from "axios";
-import EmployeeDetail from "./EmployeeDetail";
 
-const url = `https://randomuser.me/api/?results=2`;
 
-// eslint-disable-next-line import/no-anonymous-default-export
-    //let employees = axios.get(url);
-   // console.log(employees);
-   console.log(" ------------------------------ ");
-axios.get(url)
-    .then( res => {
-      console.log(" - - - - -  - - - - -  - - - - - ")
-      console.log(console.log(Array.from(res.data.results)));
-      console.log(console.dir(res));
-      console.log(" - - - - -  - - - - -  - - - - - ")
-      console.log(res.data.results[0]);
-      return(res.data.results);
-    })
-    console.log(" ------------------------------ ");
+const url = `https://randomuser.me/api/?results=20`;
 
 class DirectoryContainer extends Component {
-  state = {
-    result: {}
-  };
+
+constructor(props){
+  super(props);
+    this.state = {
+      emps: [],
+      error: null,
+      empsTemp: []
+    };
+  }
 
   // react lifecycle function: runs when component mounts
   componentDidMount() {
-    this.getEmployees();
-    //console.log("EMPLOYEE DATA:  \n " + this.getEmployees().results);
+  axios.get(url)
+    .then(
+     (res) => {
+       console.log(res)
+      this.setState({
+        emps: res.data.results
+      });
+     },
+    (error) => {
+      this.setState({
+         error
+      })
+    })
+    .then(
+      console.log(this.state.employees)
+    )
   }
 
-  // return randomized list of employees
-
-  getEmployees = () => {
-    axios.get(url)
-      .then((res) => {
-        return this.setState({ result: res.data });
-      })
-      .catch((err) => console.log(err));
-  };
-
   render() {
+  // const {employees} = this.state; 
+    const { emps } = this.state; 
     return (
-      <Container>
-          <Row>
-            <div className="col md-8">
-              <img alt="place holder" src=".\screen-main.JPG"></img>
-              {console.log("THIS is >>> "  + this )}
-             <EmployeeDetail
-                key={this.email}
-                city={this.state.result.city}  
-              />
-            </div>
-          </Row>
-      </Container>
+      <div className="container-fluid sort-section">
+        <div className="row" id="tbl-hdr">
+        <div className="col">  </div>  
+        <div className="col"> <button className="btn-secondary"> ⇵ Name </button> </div>  
+        <div className="col">  </div> 
+        <div className="col">  </div> 
+        <div className="col"> <button className="btn-secondary"> ⇵ Email </button> </div> 
+       </div> 
+
+                {
+                  emps.map((emp) => (
+                    <div className="row" key={emp.email}>
+                  
+                      <div className="col col-md-auto">
+                        <img alt="Employee" src={emp.picture.large}></img>
+                      </div>   
+                       <div className="col">
+                           <span className="h"><p><b>Name </b></p></span>  {emp.name.last},  {emp.name.first}  
+                       </div>   
+                       <div className="col"> <span className="h">   <p><b> Location </b></p></span> {emp.location.city},  {emp.location.state} ({emp.location.country}) </div>
+                       <div className="col"> <span className="h">   <p><b> Phone </b></p></span>  <p>{emp.phone}</p>  </div>
+                       <div className="col"> <span className="h">   <p><b> Email </b></p></span>  <p> {emp.email} </p> </div>
+                    </div>
+                  ))
+                }
+      </div>
     );
   }
 }
 
 export default DirectoryContainer;
 
-/*
-   state={this.state.result.State}
-   country={this.state.result.Country}
-*/
 
 
